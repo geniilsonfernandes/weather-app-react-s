@@ -13,4 +13,12 @@ export const decorators = [
   ),
 ];
 
-export const parameters = {};
+export const parameters = {
+  backgrounds: {
+    default: "black",
+    values: [
+      { name: "black", value: "#000" },
+      { name: "white", value: "#fff" },
+    ],
+  },
+};
