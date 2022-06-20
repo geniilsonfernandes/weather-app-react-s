@@ -37,6 +37,17 @@
       }
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "../src/components/**/test.{js,jsx}",
+      "**/test.js",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "testMatch": [
+      "**/test.js"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
