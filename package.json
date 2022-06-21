@@ -40,7 +40,9 @@
   "jest": {
     "collectCoverageFrom": [
       "../src/components/**/test.{js,jsx}",
-      "**/test.js",
+      "**/components/**/test.js",
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/components/**/stories.jsx",
       "!**/node_modules/**",
       "!**/vendor/**"
     ],

@@ -1,0 +1,9 @@
+export { ReactComponent as ClearSky } from "./ClearSky.svg";
+export { ReactComponent as BrokenClouds } from "./BrokenClouds.svg";
+export { ReactComponent as FewClouds } from "./FewClouds.svg";
+export { ReactComponent as Mist } from "./Mist.svg";
+export { ReactComponent as Rain } from "./Rain.svg";
+export { ReactComponent as ScatteredClouds } from "./ScatteredClouds.svg";
+export { ReactComponent as Snow } from "./Snow.svg";
+export { ReactComponent as Thunderstorm } from "./Thunderstorm.svg";
+export { ReactComponent as Compass } from "./Compass.svg";
