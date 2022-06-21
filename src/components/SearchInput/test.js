@@ -38,10 +38,6 @@ describe("<SearchInpyut/>", () => {
   it("should call function only if input have value", () => {
     renderWithTheme(<SearchInput onSubmit={onChange} />);
 
-    const input = screen.getByPlaceholderText("Search places");
-
-    userEvent.type(input, "");
-
     userEvent.keyboard("{enter}");
     expect(onChange).not.toBeCalled();
   });
