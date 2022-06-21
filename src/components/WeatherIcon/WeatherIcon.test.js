@@ -22,7 +22,7 @@ describe("<WeatherIcon />", () => {
     expect(screen.getByLabelText("Not found")).toBeInTheDocument();
   });
   it("shoud render icon with size pass", () => {
-    render(<WeatherIcon icon="ClearSky" label="ClearSky" size="30" />);
+    render(<WeatherIcon icon="ClearSky" label="ClearSky" size={30} />);
     expect(screen.getByLabelText("ClearSky").firstChild).toHaveStyle({
       width: "30px",
     });
