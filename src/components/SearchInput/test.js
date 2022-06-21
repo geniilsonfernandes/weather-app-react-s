@@ -1,7 +1,10 @@
+import { waitFor } from "@storybook/testing-library";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { SearchInput } from ".";
 import renderWithTheme from "../../utils/test/renderWithTheme";
+
+const onChange = jest.fn();
 
 describe("<SearchInpyut/>", () => {
   it("should render the component correctly ", () => {
@@ -21,5 +24,26 @@ describe("<SearchInpyut/>", () => {
 
     userEvent.type(input, "rio de janeiro");
     expect(input.value).toBe("rio de janeiro");
+  });
+
+  it("should call function when keyboard enter clicked ", () => {
+    renderWithTheme(<SearchInput onSubmit={onChange} />);
+
+    const input = screen.getByPlaceholderText("Search places");
+
+    userEvent.type(input, "rio de janeiro");
+
+    userEvent.keyboard("{enter}");
+    expect(onChange).toBeCalled();
+  });
+  it("should call function only if input have value", () => {
+    renderWithTheme(<SearchInput onSubmit={onChange} />);
+
+    const input = screen.getByPlaceholderText("Search places");
+
+    userEvent.type(input, "");
+
+    userEvent.keyboard("{enter}");
+    expect(onChange).not.toBeCalled();
   });
 });
