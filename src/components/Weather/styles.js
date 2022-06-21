@@ -5,7 +5,14 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const WeatherIcon = styled.span``;
+export const IconWrapper = styled.div`
+  padding: 16px 0;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 export const Content = styled.span`
   display: flex;
   flex-direction: column;

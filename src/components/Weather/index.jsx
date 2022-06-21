@@ -1,11 +1,14 @@
 import React from "react";
 import * as S from "./styles";
 import P from "prop-types";
+import { WeatherIcon } from "../WeatherIcon";
 
-const Weather = ({ temp, description, condition, date }) => {
+export const Weather = ({ temp, description, condition, date, icon }) => {
   return (
     <S.Wrapper>
-      <S.WeatherIcon>icon</S.WeatherIcon>
+      <S.IconWrapper>
+        <WeatherIcon icon={icon} label={condition} />
+      </S.IconWrapper>
       <S.Content>
         <S.Condition>{condition}</S.Condition>
         <S.Descripiton>{description}</S.Descripiton>
@@ -16,10 +19,21 @@ const Weather = ({ temp, description, condition, date }) => {
   );
 };
 
+const cases = [
+  "ClearSky",
+  "BrokenClouds",
+  "FewClouds",
+  "Mist",
+  "Rain",
+  "ScatteredClouds",
+  "Snow",
+  "Thunderstorm",
+];
+
 Weather.propTypes = {
   temp: P.number,
   condition: P.string,
+  icon: P.oneOf(cases),
   description: P.string,
   date: P.number,
 };
-export default Weather;
