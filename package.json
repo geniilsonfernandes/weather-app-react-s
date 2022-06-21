@@ -40,14 +40,14 @@
   "jest": {
     "collectCoverageFrom": [
       "../src/components/**/test.{js,jsx}",
-      "**/components/**/test.js",
       "src/**/*.{js,jsx,ts,tsx}",
       "!**/components/**/stories.jsx",
       "!**/node_modules/**",
       "!**/vendor/**"
     ],
     "testMatch": [
-      "**/test.js"
+      "**/test.js",
+      "**/components/**/test.js"
     ]
   },
   "browserslist": {
