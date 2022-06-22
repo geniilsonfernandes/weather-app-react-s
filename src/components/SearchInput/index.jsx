@@ -12,7 +12,7 @@ export const SearchInput = ({ onSubmit }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value !== "") onSubmit(value);
+    !!value && onSubmit(value);
   };
 
   return (
