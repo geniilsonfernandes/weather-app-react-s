@@ -65,7 +65,7 @@ export const WeatherIcon = ({ icon, label, size }) => {
       );
     default:
       return (
-        <S.Icon aria-label="Not found" size={size}>
+        <S.Icon aria-label="Not found">
           <Compass />
         </S.Icon>
       );
@@ -85,6 +85,6 @@ const cases = [
 
 WeatherIcon.propTypes = {
   icon: P.oneOf(cases),
-  label: P.oneOf(cases),
+  label: P.string,
   size: P.number,
 };

@@ -4,14 +4,14 @@ import { WeatherIcon } from "../WeatherIcon/";
 
 import * as S from "./styles";
 
-export const WeatherCard = ({ icon }) => {
+export const WeatherCard = ({ icon, temp, date, condition }) => {
   return (
     <S.Wrapper>
-      <S.Date>Sun, 20 Mar</S.Date>
+      <S.Date>{date}</S.Date>
       <S.Icon>
-        <WeatherIcon size={48} icon={icon} />
+        <WeatherIcon icon={icon} label={condition} />
       </S.Icon>
-      <S.Temp>22°C</S.Temp>
+      <S.Temp>{temp}°C</S.Temp>
     </S.Wrapper>
   );
 };
@@ -28,5 +28,7 @@ const cases = [
 
 WeatherCard.propTypes = {
   icon: P.oneOf(cases),
-  label: P.oneOf(cases),
+  date: P.number,
+  temp: P.number,
+  condition: P.string,
 };
