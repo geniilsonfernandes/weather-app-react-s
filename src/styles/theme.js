@@ -7,4 +7,5 @@ export default {
     black300: "#343434",
     black500: "#444444",
   },
+  radius: "4px",
 };

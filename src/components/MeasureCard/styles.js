@@ -13,7 +13,7 @@ export const Icon = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 18px;
-  background: #444444;
+  background: ${({ theme }) => theme.colors.black200};
 
   svg {
     transform: scale(1.4);
