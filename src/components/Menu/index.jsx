@@ -14,11 +14,8 @@ export const Menu = () => {
 
   useEffect(() => {
     const outSideClick = (e) => {
-      if (!modalRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
+      !modalRef.current.contains(e.target) && setIsOpen(false);
     };
-
     window.addEventListener("click", outSideClick);
     return () => {
       window.removeEventListener("click", outSideClick);
@@ -27,13 +24,13 @@ export const Menu = () => {
 
   return (
     <S.Wrapper ref={modalRef}>
-      <S.Menu aria-label="menu">
-        <S.Link onClick={() => handleClick()}>
-          <S.Place>La Plata, Argentina</S.Place> <FiChevronDown />
-        </S.Link>
+      <S.Menu aria-label="menu" aria-expanded={isOpen}>
+        <S.Button onClick={() => handleClick()} isOpen={isOpen}>
+          <S.Label>La Plata, Argentina</S.Label> <FiChevronDown />
+        </S.Button>
       </S.Menu>
-      <S.Modal aria-label="menu expanded" isOpen={isOpen}>
-        <S.Tag>Recents {isOpen ? "true" : "false"}</S.Tag>
+      <S.Modal aria-label="menu expanded" isOpen={isOpen} aria-hidden={!isOpen}>
+        <S.Tag>Recents</S.Tag>
       </S.Modal>
     </S.Wrapper>
   );
