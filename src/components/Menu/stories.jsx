@@ -5,4 +5,8 @@ export default {
   component: Menu,
 };
 
-export const Default = (args) => <Menu {...args} />;
+export const Default = (args) => (
+  <div style={{ display: "flex", justifyContent: "center" }}>
+    <Menu {...args} />
+  </div>
+);
