@@ -53,9 +53,9 @@ export const Home = () => {
       <S.SectionMenu>
         <Menu />
       </S.SectionMenu>
-      <S.SectionWrapper margin="16">
+      <S.WeatherWrapper>
         <Weather {...mockWeather} />
-      </S.SectionWrapper>
+      </S.WeatherWrapper>
       <S.BoxWrapper margin="16">
         <MeasureCard
           title="Wind"

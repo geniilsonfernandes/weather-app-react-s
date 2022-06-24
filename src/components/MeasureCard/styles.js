@@ -13,8 +13,7 @@ export const Icon = styled.div`
   width: 36px;
   height: 36px;
   border-radius: 18px;
-  background: ${({ theme }) => theme.colors.black200};
-
+  background: ${({ theme }) => theme.colors.black[400]};
   svg {
     transform: scale(1.4);
   }
@@ -23,12 +22,12 @@ export const Icon = styled.div`
 export const Content = styled.div``;
 export const Title = styled.span`
   font-weight: 500;
-  font-size: 12px;
-  color: ${({ theme }) => theme.colors.white100};
+  font-size: ${({ theme }) => theme.fontSizes.xsmall};
+  color: ${({ theme }) => theme.colors.white[100]};
 `;
 
 export const Mesure = styled.h1`
   font-weight: 500;
-  font-size: 18px;
-  color: ${({ theme }) => theme.colors.white100};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  color: ${({ theme }) => theme.colors.white[100]};
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background: ${({ theme }) => theme.colors.black500};
+  background: ${({ theme }) => theme.colors.black[300]};
   padding: 10px 16px;
   border-radius: 4px;
   display: inline-flex;
@@ -18,8 +18,8 @@ export const Wrapper = styled.div`
 
 export const Date = styled.span`
   font-weight: 400;
-  font-size: 1.4rem;
-  color: ${({ theme }) => theme.colors.white100};
+  font-size: ${({ theme }) => theme.fontSizes.xsmall};
+  color: ${({ theme }) => theme.colors.white[400]};
   @media (max-width: 768px) {
     order: 0;
   }
@@ -43,8 +43,8 @@ export const Icon = styled.div`
 `;
 export const Temp = styled.h2`
   font-weight: 600;
-  font-size: 2rem;
-  color: ${({ theme }) => theme.colors.white100};
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  color: ${({ theme }) => theme.colors.white[100]};
   @media (max-width: 768px) {
     order: 1;
     font-size: 1.8rem;

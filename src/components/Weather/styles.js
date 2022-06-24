@@ -19,26 +19,26 @@ export const Content = styled.span`
   align-items: center;
 `;
 export const Condition = styled.h2`
-  font-size: 3rem;
+  font-size: ${({ theme }) => theme.fontSizes.large};
   line-height: 2.6rem;
   padding: 8px 0;
   font-weight: 600;
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.white[100]};
 `;
 export const Descripiton = styled.p`
   font-size: 1.4rem;
   font-weight: 300;
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.white[100]};
 `;
 export const Date = styled.p`
-  font-size: 1.4rem;
+  font-size: ${({ theme }) => theme.fontSizes.xsmall};
   font-weight: 300;
   padding-top: 8px;
-  color: ${({ theme }) => theme.colors.white500};
+  color: ${({ theme }) => theme.colors.white[500]};
 `;
 export const Temp = styled.h1`
-  font-size: 4.8rem;
+  font-size: ${({ theme }) => theme.fontSizes.xlarge};
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.white100};
+  color: ${({ theme }) => theme.colors.white[100]};
   padding-top: 8px;
 `;

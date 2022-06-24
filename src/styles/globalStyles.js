@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
   input{
     font-size: 1.6rem;
+    font-family: 'Poppins', sans-serif;
   }
   button{
     font-family: 'Poppins', sans-serif;

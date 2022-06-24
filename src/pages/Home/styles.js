@@ -24,9 +24,13 @@ export const SectionWrapper = styled.div`
   `}
 `;
 
+export const WeatherWrapper = styled(SectionWrapper)`
+  margin-bottom: 32px;
+`;
+
 export const BoxWrapper = styled(SectionWrapper)`
   ${({ theme, margin }) => css`
-    background: ${theme.colors.black500};
+    background: ${theme.colors.black[300]};
     border-radius: ${theme.radius};
     padding: 16px;
     display: grid;

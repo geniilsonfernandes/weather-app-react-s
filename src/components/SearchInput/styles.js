@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.form`
   height: 52px;
-  background: #343434;
+  background: ${({ theme }) => theme.colors.black[300]};
   width: 100%;
   max-width: 500px;
   display: flex;
   border-radius: 4px;
   &:focus-within {
-    box-shadow: 0 0 0 1px #dddddd;
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.white[100]};
   }
 `;
 export const WrapperIcon = styled.label`
@@ -25,9 +25,9 @@ export const SearchInput = styled.input`
   width: 100%;
   background: none;
 
-  color: #dddddd;
-  font-size: 1.6rem;
+  color: ${({ theme }) => theme.colors.white[100]};
+  font-size: ${({ theme }) => theme.fontSizes.normal};
   &::placeholder {
-    color: #dddddd;
+    color: ${({ theme }) => theme.colors.white[400]};
   }
 `;
