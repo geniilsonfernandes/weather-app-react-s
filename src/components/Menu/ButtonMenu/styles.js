@@ -3,35 +3,57 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 300px;
+  height: 36px;
 `;
-export const Label = styled.button`
-  ${({ theme }) => css`
-    height: 48px;
-    padding: 0 8px;
-    background: ${theme.colors.black300};
-    border-radius: ${theme.radius};
-    width: 100%;
 
-    color: ${theme.colors.white100};
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-align: left;
+export const ButtonLabel = styled.button`
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+  text-align: left;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  transition: background ease-in-out 300ms;
+  ${({ theme }) => css`
+    color: ${theme.colors.white[100]};
+    font-size: ${theme.fontSizes.normal};
+    background: ${theme.colors.black[100]};
+    &:hover {
+      background: ${theme.colors.black[300]};
+    }
+    &:hover + button {
+      opacity: 1;
+    }
+    &:focus + button {
+      opacity: 1;
+    }
   `}
+  cursor: pointer;
 `;
+
 export const ButtonRemove = styled.button`
+  position: absolute;
+  padding: 2px 8px;
+  right: 0;
+  margin-right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   ${({ theme }) => css`
-    position: absolute;
-    padding: 2px 4px;
-
-    right: 0;
-    margin-right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-
+    color: ${theme.colors.white[100]};
+    font-size: ${theme.fontSizes.xsmall};
     border-radius: ${theme.radius};
+    border: 1px solid ${theme.colors.white[500]};
     background: none;
-    color: ${theme.colors.white100};
-    border: 1px solid ${theme.colors.white500}; ;
+    opacity: 0.2;
+    &:hover {
+      background: ${theme.colors.black[400]};
+      opacity: 1;
+    }
+    &:focus {
+      background: ${theme.colors.black[400]};
+      opacity: 1;
+    }
   `}
+  cursor: pointer;
 `;

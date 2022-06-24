@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import * as S from "./styles";
 import P from "prop-types";
 
 export const ButtonMenu = ({ title, onClick, toolTipOnClick }) => {
-  const [showRemove, setShowRemove] = useState(false);
-
   const handleClick = () => {
     !!onClick && onClick();
   };
@@ -12,17 +10,18 @@ export const ButtonMenu = ({ title, onClick, toolTipOnClick }) => {
   const handleToolTipClick = () => {
     !!toolTipOnClick && toolTipOnClick();
   };
+
   return (
     <S.Wrapper
-      onMouseOver={() => setShowRemove(true)}
-      onMouseLeave={() => setShowRemove(false)}
+      onClick={() => handleClick()}
+      role="button"
+      aria-label="place recente"
     >
-      <S.Label onClick={() => handleClick()}>{title}</S.Label>
-      {showRemove && (
-        <S.ButtonRemove onClick={() => handleToolTipClick()}>
-          Remove
-        </S.ButtonRemove>
-      )}
+      <S.ButtonLabel>{title}</S.ButtonLabel>
+
+      <S.ButtonRemove onClick={() => handleToolTipClick()}>
+        Remove
+      </S.ButtonRemove>
     </S.Wrapper>
   );
 };
