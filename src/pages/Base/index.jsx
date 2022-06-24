@@ -5,10 +5,12 @@ import * as S from "./styles";
 
 export const Base = ({ children }) => {
   return (
-    <S.Head>
-      <SearchInput />
+    <S.Main>
+      <S.Header>
+        <SearchInput />
+      </S.Header>
       {children}
-    </S.Head>
+    </S.Main>
   );
 };
 
