@@ -2,13 +2,17 @@ import React from "react";
 import P from "prop-types";
 import { SearchInput } from "../../components/SearchInput";
 import * as S from "./styles";
+import { Container } from "../../components/Layout";
 
 export const Base = ({ children }) => {
   return (
     <S.Main>
-      <S.Header>
-        <SearchInput />
-      </S.Header>
+      <Container>
+        <S.Header>
+          <SearchInput />
+        </S.Header>
+      </Container>
+
       {children}
     </S.Main>
   );
