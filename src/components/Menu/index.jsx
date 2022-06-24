@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import { ButtonMenu } from "./ButtonMenu";
 
 import * as S from "./styles";
 
@@ -26,11 +27,17 @@ export const Menu = () => {
     <S.Wrapper ref={modalRef}>
       <S.Menu aria-label="menu" aria-expanded={isOpen}>
         <S.Button onClick={() => handleClick()} isOpen={isOpen}>
-          <S.Label>La Plata, Argentina</S.Label> <FiChevronDown />
+          La Plata, Argentina
+          <FiChevronDown />
         </S.Button>
       </S.Menu>
       <S.Modal aria-label="menu expanded" isOpen={isOpen} aria-hidden={!isOpen}>
-        <S.Tag>Recents</S.Tag>
+        <S.Tag>Recents:</S.Tag>
+        <S.ModalContent>
+          <ButtonMenu title="Rio de janeiro" />
+          <ButtonMenu title="Cuiaba" />
+          <ButtonMenu title="Vitória" />
+        </S.ModalContent>
       </S.Modal>
     </S.Wrapper>
   );

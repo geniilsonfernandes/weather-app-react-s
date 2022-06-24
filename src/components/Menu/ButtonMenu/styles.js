@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const ButtonLabel = styled.button`
   width: 100%;
   height: 100%;
-  padding: 0 8px;
+  padding: 4px 8px;
   text-align: left;
   border: none;
   border-radius: 4px;
@@ -17,10 +17,10 @@ export const ButtonLabel = styled.button`
   transition: background ease-in-out 300ms;
   ${({ theme }) => css`
     color: ${theme.colors.white[100]};
-    font-size: ${theme.fontSizes.normal};
-    background: ${theme.colors.black[100]};
+    font-size: ${theme.fontSizes.xsmall};
+    background: ${theme.colors.black[300]};
     &:hover {
-      background: ${theme.colors.black[300]};
+      background: ${theme.colors.black[400]};
     }
     &:hover + button {
       opacity: 1;
@@ -36,8 +36,8 @@ export const ButtonRemove = styled.button`
   position: absolute;
   padding: 2px 8px;
   right: 0;
-  margin-right: 8px;
   top: 50%;
+  margin-right:8px;
   transform: translateY(-50%);
   ${({ theme }) => css`
     color: ${theme.colors.white[100]};

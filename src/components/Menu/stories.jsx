@@ -1,7 +1,7 @@
 import { Menu } from ".";
 
 export default {
-  title: "Menu",
+  title: "Menu/Menu",
   component: Menu,
 };
 

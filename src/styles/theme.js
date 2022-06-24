@@ -22,12 +22,12 @@ export default {
     },
   },
   fontSizes: {
-    xsmall: "14rem",
-    normal: "16rem",
-    medium: "18rem",
-    large: "26rem",
-    xlarge: "42rem",
-    biger: "52rem",
+    xsmall: "1.4rem",
+    small: "1.6rem",
+    medium: "1.8rem",
+    large: "2.6rem",
+    xlarge: "4.2rem",
+    biger: "5.2rem",
   },
   radius: "4px",
 };
