@@ -3,14 +3,18 @@ import theme from "./styles/theme";
 import GlobalStyle from "./styles/globalStyles";
 import { Home } from "./pages/Home";
 import { Base } from "./pages/Base";
+import { DataProvider } from "./context/dataContext";
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Base>
-        <Home />
-      </Base>
-      <GlobalStyle />
-    </ThemeProvider>
+    <DataProvider>
+      <ThemeProvider theme={theme}>
+        <Base>
+          <Home />
+        </Base>
+        <GlobalStyle />
+      </ThemeProvider>
+    </DataProvider>
   );
 }
 

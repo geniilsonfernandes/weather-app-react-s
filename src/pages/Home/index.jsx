@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
+import { WiStrongWind } from "react-icons/wi";
 import { MeasureCard } from "../../components/MeasureCard";
 import { Menu } from "../../components/Menu";
 import { Weather } from "../../components/Weather";
 import { Heading } from "../../components/Heading";
-import { WiStrongWind } from "react-icons/wi";
 import { WeatherCard } from "../../components/WeatherCard";
+import { useDataContext } from "../../context/dataContext";
 
 import * as S from "./styles";
 
@@ -48,6 +50,8 @@ const mockWeatherCard = [
 ];
 
 export const Home = () => {
+  const { loading, data, error, state } = useDataContext();
+
   return (
     <S.Container>
       <S.SectionMenu>
