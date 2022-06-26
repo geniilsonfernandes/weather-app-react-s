@@ -32,7 +32,7 @@ export const SearchInput = ({ onSubmit, error, loading, sucess }) => {
         disabled={loading}
       />
       {!!error && <S.Error>{error}</S.Error>}
-      {!!loading && <S.DotsLoading aria-label="seeding"></S.DotsLoading>}
+      {!!loading && <S.DotsLoading aria-label="loading"></S.DotsLoading>}
     </S.Wrapper>
   );
 };
