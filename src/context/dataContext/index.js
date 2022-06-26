@@ -39,8 +39,8 @@ function reducer(state, action) {
       const storageValue = localStorage.getItem("history");
       return {
         ...state,
-        history: storageValue ? storageValue : [],
-        currentPlace: currentPlace ? currentPlace : {},
+        history: storageValue ? JSON.parse(storageValue) : [],
+        currentPlace: currentPlace ? JSON.parse(currentPlace) : {},
       };
     }
     case "REMOVE_PLACE": {
@@ -63,6 +63,7 @@ export const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState({});
+  const [sucess, setSucess] = useState(false);
   const getForecastByPlace = async (queryValue) => {
     setLoading(true);
     setError(null);
@@ -87,13 +88,14 @@ export const DataProvider = ({ children }) => {
       });
       dispatch(actions.addHitory({ coord, name }));
       setData({ ...forecastReponse.data, id, name, coord });
-      setError(null);
+      setError(false);
+      setSucess(true);
       setLoading(false);
     } catch (error) {
       const errorMessage = error.response.data.message;
-      const errorCode = error.code;
-      setError({ errorMessage, errorCode });
+      setError(errorMessage);
       setData({});
+      setSucess(false);
       setLoading(false);
     }
   };
@@ -102,7 +104,9 @@ export const DataProvider = ({ children }) => {
   };
 
   return (
-    <DataContext.Provider value={{ loading, error, data, fetchQuery, state }}>
+    <DataContext.Provider
+      value={{ loading, error, data, fetchQuery, state, sucess }}
+    >
       {children}
     </DataContext.Provider>
   );

@@ -20,6 +20,7 @@ export default {
       400: "#B3B3B3",
       500: "#999999",
     },
+    error: "#d34b4b",
   },
   fontSizes: {
     xsmall: "1.4rem",
