@@ -7,9 +7,9 @@ import { Container } from "../../components/Layout";
 import { useDataContext } from "../../context/dataContext";
 
 export const Base = ({ children }) => {
-  const { fetchQuery, loading, error, sucess } = useDataContext();
+  const { getForecastByPlace, loading, error, sucess } = useDataContext();
   const handleSubmit = (query) => {
-    fetchQuery(query);
+    getForecastByPlace(query);
   };
 
   return (
