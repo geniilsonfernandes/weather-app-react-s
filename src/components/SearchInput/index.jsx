@@ -39,7 +39,7 @@ export const SearchInput = ({ onSubmit, error, loading, sucess }) => {
 
 SearchInput.propTypes = {
   onSubmit: P.func,
-  error: P.string,
+  error: P.oneOfType([P.string, P.bool]),
   loading: P.bool,
   sucess: P.bool,
 };
