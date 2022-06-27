@@ -9,7 +9,8 @@ const MockIcon = () => {
 const mock = {
   icon: <MockIcon />,
   title: "Wind",
-  mesure: "10km/h",
+  mesure: 10,
+  unit: "km/h",
 };
 
 describe("<MeasureCard />", () => {
@@ -18,13 +19,13 @@ describe("<MeasureCard />", () => {
 
     expect(screen.getByTestId("icon")).toBeInTheDocument();
     expect(screen.getByText(mock.title)).toBeInTheDocument();
-    expect(screen.getByText(mock.mesure)).toBeInTheDocument();
+    expect(screen.getByText(mock.mesure + mock.unit)).toBeInTheDocument();
   });
   it("should not render icon ", () => {
     renderWithTheme(<MeasureCard title={mock.title} mesure={mock.mesure} />);
 
     expect(screen.queryByTestId("icon")).not.toBeInTheDocument();
     expect(screen.getByText(mock.title)).toBeInTheDocument();
-    expect(screen.getByText(mock.mesure)).toBeInTheDocument();
+    expect(screen.getByText(mock.mesure + mock.unit)).toBeInTheDocument();
   });
 });
