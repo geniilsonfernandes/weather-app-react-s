@@ -14,6 +14,8 @@ export default {
 export const Default = (args) => (
   <span style={{ fontSize: "100px" }}>
     <WeatherIcon {...args} />
+    <br />
+    <a href="https://openweathermap.org/weather-conditions">icons code</a>
   </span>
 );
 
