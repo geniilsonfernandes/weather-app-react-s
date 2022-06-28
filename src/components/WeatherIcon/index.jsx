@@ -8,7 +8,7 @@ export const WeatherIcon = ({ iconCode, label }) => {
       <S.Icon className={`owf owf-${iconCode}`} alt={label} title={label} />
     );
   } else {
-    return <RiAlertFill alt="no found" title="no found" />;
+    return <RiAlertFill aria-label="no found" title="no found" />;
   }
 };
 
