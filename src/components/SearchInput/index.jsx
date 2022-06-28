@@ -19,7 +19,11 @@ export const SearchInput = ({ onSubmit, error, loading, sucess }) => {
   }, [sucess]);
 
   return (
-    <S.Wrapper onSubmit={handleSubmit} error={error} $loading={loading}>
+    <S.Wrapper
+      onSubmit={handleSubmit}
+      error={error}
+      isloading={loading}
+    >
       <S.WrapperIcon htmlFor="search">
         <FiSearch aria-label="search icon button" size={18} />
       </S.WrapperIcon>

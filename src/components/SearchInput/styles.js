@@ -39,7 +39,7 @@ const wrapperModifer = {
 };
 
 export const Wrapper = styled.form`
-  ${({ error, loading, theme }) => css`
+  ${({ error, isloading, theme }) => css`
     background: ${theme.colors.black[300]};
     height: 52px;
     width: 100%;
@@ -51,7 +51,7 @@ export const Wrapper = styled.form`
       box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.white[100]};
     }
     ${!!error && wrapperModifer.error(theme)}
-    ${!!loading && wrapperModifer.loading(theme)}
+    ${!!isloading && wrapperModifer.loading(theme)}
   `}
 `;
 
