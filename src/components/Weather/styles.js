@@ -6,12 +6,11 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 export const IconWrapper = styled.div`
-  padding: 16px 0;
-  width: 130px;
-  height: 130px;
+  padding: 16px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 102px;
 `;
 export const Content = styled.span`
   display: flex;
