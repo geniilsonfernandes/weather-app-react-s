@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React from "react";
 import {
   WiStrongWind,
   WiRaindrop,
@@ -15,51 +14,12 @@ import { useDataContext } from "../../context/dataContext";
 import loadingImage from "../../image/loading.gif";
 import * as S from "./styles";
 
-const mockWeather = {
-  temp: 45,
-  condition: "Clear sky",
-  description: "Low rain",
-  date: 10101000,
-};
-const mockWeatherCard = [
-  {
-    date: 123456,
-    temp: 10,
-    icon: "Rain",
-    condition: "low rain",
-  },
-  {
-    date: 123456,
-    temp: 20,
-    icon: "Rain",
-    condition: "low rain",
-  },
-  {
-    date: 123456,
-    temp: 30,
-    icon: "Rain",
-    condition: "low rain",
-  },
-  {
-    date: 123456,
-    temp: 40,
-    icon: "Rain",
-    condition: "low rain",
-  },
-  {
-    date: 123456,
-    temp: 50,
-    icon: "Rain",
-    condition: "low rain",
-  },
-];
-
 export const Home = () => {
   const {
     data,
     state: { currentPlace },
   } = useDataContext();
-  
+
   if (!data.name) {
     return (
       <S.Loading>

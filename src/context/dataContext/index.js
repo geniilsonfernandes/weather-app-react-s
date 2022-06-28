@@ -8,7 +8,7 @@ import React, {
 import api from "../../services/api";
 import P from "prop-types";
 
-const DataContext = createContext();
+export const DataContext = createContext();
 
 const actions = {
   addHitory: (item) => ({ type: "ADD_NEW_PLACE", payload: item }),
@@ -17,29 +17,20 @@ const actions = {
 };
 
 const initialState = {
-  history: [],
   currentPlace: {},
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case "ADD_NEW_PLACE":
-      localStorage.setItem(
-        "history",
-        JSON.stringify([...state.history, action.payload])
-      );
+    case "ADD_NEW_PLACE": {
       localStorage.setItem("currentPlace", JSON.stringify(action.payload));
       return {
-        ...state,
-        history: [...state.history, action.payload],
         currentPlace: action.payload,
       };
+    }
     case "GET_LOCAL_STORAGE": {
       const currentPlace = localStorage.getItem("currentPlace");
-      const storageValue = localStorage.getItem("history");
       return {
-        ...state,
-        history: storageValue ? JSON.parse(storageValue) : [],
         currentPlace: currentPlace ? JSON.parse(currentPlace) : {},
       };
     }
@@ -95,7 +86,6 @@ export const DataProvider = ({ children }) => {
     } catch (error) {
       const errorMessage = error.response.data.message;
       setError(errorMessage);
-      setData({});
       setSucess(false);
       setLoading(false);
     }
