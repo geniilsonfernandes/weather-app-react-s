@@ -53,6 +53,14 @@ describe("<SearchInpyut/>", () => {
       "box-shadow": "0 0 0 1px #d34b4b",
     });
   });
+  it("should have cursor not-allowed when loading", () => {
+    renderWithTheme(<SearchInput onSubmit={onChange} loading={true} />);
+    const input = screen.getByPlaceholderText("Search places");
+    expect(input).toHaveAttribute("disabled");
+    expect(input.parentElement).toHaveStyle({
+      cursor: "not-allowed",
+    });
+  });
   it("should clear input if sucess return", () => {
     const { rerender } = renderWithTheme(<SearchInput onSubmit={onChange} />);
     const input = screen.getByPlaceholderText("Search places");
