@@ -3,11 +3,13 @@ import userEvent from "@testing-library/user-event";
 import { Menu } from ".";
 import renderWithTheme from "../../utils/test/renderWithTheme";
 
+const currentPlace = "rio";
+
 describe("<SearchInpyut/>", () => {
   it("should render the component correctly ", () => {
-    renderWithTheme(<Menu />);
+    renderWithTheme(<Menu currentPlace={currentPlace} />);
 
-    expect(screen.getByText("La Plata, Argentina")).toBeInTheDocument();
+    expect(screen.getByText(currentPlace)).toBeInTheDocument();
     expect(screen.getByLabelText("menu")).toHaveAttribute(
       "aria-expanded",
       "false"
@@ -18,9 +20,9 @@ describe("<SearchInpyut/>", () => {
     );
   });
   it("should opem modal menu when button clicked ", () => {
-    renderWithTheme(<Menu />);
+    renderWithTheme(<Menu currentPlace={currentPlace} />);
 
-    userEvent.click(screen.getByText("La Plata, Argentina"));
+    userEvent.click(screen.getByText(currentPlace));
     expect(screen.getByLabelText("menu expanded")).toHaveAttribute(
       "aria-hidden",
       "false"
@@ -29,11 +31,11 @@ describe("<SearchInpyut/>", () => {
   it("should close modal menu when  clicked outside ", () => {
     renderWithTheme(
       <div data-testid="body">
-        <Menu />
+        <Menu currentPlace={currentPlace} />
       </div>
     );
 
-    userEvent.click(screen.getByText("La Plata, Argentina"));
+    userEvent.click(screen.getByText(currentPlace));
     expect(screen.getByLabelText("menu expanded")).toHaveAttribute(
       "aria-hidden",
       "false"

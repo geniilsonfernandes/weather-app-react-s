@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { ButtonMenu } from "./ButtonMenu";
-
+import P from "prop-types";
 import * as S from "./styles";
 
-export const Menu = () => {
+export const Menu = ({ currentPlace }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const modalRef = useRef();
 
   const handleClick = () => {
@@ -27,7 +26,7 @@ export const Menu = () => {
     <S.Wrapper ref={modalRef}>
       <S.Menu aria-label="menu" aria-expanded={isOpen}>
         <S.Button onClick={() => handleClick()} isOpen={isOpen}>
-          La Plata, Argentina
+          {currentPlace}
           <FiChevronDown />
         </S.Button>
       </S.Menu>
@@ -41,4 +40,8 @@ export const Menu = () => {
       </S.Modal>
     </S.Wrapper>
   );
+};
+
+Menu.propTypes = {
+  currentPlace: P.string,
 };
