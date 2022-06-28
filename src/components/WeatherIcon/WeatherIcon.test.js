@@ -1,30 +1,17 @@
 import { render, screen } from "@testing-library/react";
 import { WeatherIcon } from "./index";
 
-const cases = [
-  "ClearSky",
-  "BrokenClouds",
-  "FewClouds",
-  "Mist",
-  "Rain",
-  "ScatteredClouds",
-  "Snow",
-  "Thunderstorm",
-];
-
 describe("<WeatherIcon />", () => {
-  it.each(cases)("Should render icon correctly if test cases", (first) => {
-    render(<WeatherIcon icon={first} label={first} />);
-    expect(screen.getByLabelText(first)).toBeInTheDocument();
+  it("shoud icon render with label and title", () => {
+    const { container } = render(
+      <WeatherIcon iconCode={200} label="clear sky" />
+    );
+    expect(screen.getByTitle("clear sky")).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
-  it("shoud icom not found when icon no pass", () => {
-    render(<WeatherIcon />);
-    expect(screen.getByLabelText("Not found")).toBeInTheDocument();
-  });
-  it("shoud render icon with size pass", () => {
-    render(<WeatherIcon icon="ClearSky" label="ClearSky" size={30} />);
-    expect(screen.getByLabelText("ClearSky").firstChild).toHaveStyle({
-      width: "30px",
-    });
+  it("shoud icon no found when icon no pass", () => {
+    const { container } = render(<WeatherIcon />);
+    expect(screen.getByTitle("no found")).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });
