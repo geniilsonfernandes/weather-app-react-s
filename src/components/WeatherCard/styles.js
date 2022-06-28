@@ -28,17 +28,10 @@ export const Icon = styled.div`
   padding: 16px 0;
   display: flex;
   align-items: center;
-  svg {
-    width: 48px;
-    height: 48px;
-  }
+  font-size: 38px;
   @media (max-width: 768px) {
-    order: 2;
     padding: 0;
-    svg {
-      width: 32px;
-      height: 32px;
-    }
+    font-size: 24px;
   }
 `;
 export const Temp = styled.h2`

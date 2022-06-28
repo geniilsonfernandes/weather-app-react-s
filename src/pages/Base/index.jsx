@@ -12,10 +12,6 @@ export const Base = ({ children }) => {
     getForecastByPlace(query);
   };
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <S.Main>
       <Container>

@@ -3,32 +3,23 @@ import P from "prop-types";
 import { WeatherIcon } from "../WeatherIcon/";
 
 import * as S from "./styles";
+import { convertTimeStamp } from "../../utils/convertTimeStamp";
 
-export const WeatherCard = ({ icon, temp, date, condition }) => {
+export const WeatherCard = ({ iconCode, temp, date, condition }) => {
   return (
     <S.Wrapper>
-      <S.Date>{date}</S.Date>
+      <S.Date>{convertTimeStamp(date).weekday}</S.Date>
       <S.Icon>
-        <WeatherIcon icon={icon} label={condition} />
+        <WeatherIcon iconCode={iconCode} label={condition} />
       </S.Icon>
       <S.Temp>{temp}°C</S.Temp>
     </S.Wrapper>
   );
 };
-const cases = [
-  "ClearSky",
-  "BrokenClouds",
-  "FewClouds",
-  "Mist",
-  "Rain",
-  "ScatteredClouds",
-  "Snow",
-  "Thunderstorm",
-];
 
 WeatherCard.propTypes = {
-  icon: P.oneOf(cases),
+  iconCode: P.number,
   date: P.number,
-  temp: P.number,
+  temp: P.oneOfType([P.string, P.number]),
   condition: P.string,
 };

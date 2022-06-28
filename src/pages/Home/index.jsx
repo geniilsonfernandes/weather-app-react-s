@@ -55,8 +55,11 @@ const mockWeatherCard = [
 ];
 
 export const Home = () => {
-  const { loading, data, error, state } = useDataContext();
-
+  const {
+    data,
+    state: { currentPlace },
+  } = useDataContext();
+  
   if (!data.name) {
     return (
       <S.Loading>
@@ -67,7 +70,7 @@ export const Home = () => {
     return (
       <S.Container>
         <S.SectionMenu>
-          <Menu />
+          <Menu currentPlace={currentPlace.name} />
         </S.SectionMenu>
         <S.WeatherWrapper>
           <Weather
@@ -105,10 +108,15 @@ export const Home = () => {
           />
         </S.BoxWrapper>
         <S.SectionWrapper>
-          <Heading title="Week" />
+          <Heading title="Week | last 5 days" />
           <S.SectionGrid>
-            {mockWeatherCard.map((item) => (
-              <WeatherCard key={item.temp} {...item} />
+            {data.daily.slice(0, 5).map((temp) => (
+              <WeatherCard
+                key={temp.dt}
+                temp={temp.temp.day.toFixed()}
+                iconCode={temp.weather[0].id}
+                date={temp.dt}
+              />
             ))}
           </S.SectionGrid>
         </S.SectionWrapper>
