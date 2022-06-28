@@ -15,7 +15,7 @@ const mock = {
   temp: 45,
   condition: "Clear sky",
   description: "Low rain",
-  date: 10101000,
+  date: 1656384911, // Mon, 27 Jun 2022
 };
 
 describe("<Weather />", () => {
@@ -25,7 +25,9 @@ describe("<Weather />", () => {
     expect(screen.getByTestId(/icon/i)).toBeInTheDocument();
     expect(screen.getByText(mock.condition)).toBeInTheDocument();
     expect(screen.getByText(mock.description)).toBeInTheDocument();
-    expect(screen.getByText(mock.date)).toBeInTheDocument();
+    expect(screen.getByText("Mon, 27 Jun 2022")).toHaveTextContent(
+      "Mon, 27 Jun 2022"
+    );
     expect(screen.getByText(`45°C`)).toBeInTheDocument();
   });
 });
