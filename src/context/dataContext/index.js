@@ -62,8 +62,9 @@ export const DataProvider = ({ children }) => {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [sucess, setSucess] = useState(false);
+
   const getForecastByPlace = async (queryValue) => {
     setLoading(true);
     setError(null);
@@ -71,7 +72,7 @@ export const DataProvider = ({ children }) => {
       const placeReponse = await api.get("weather", {
         params: {
           q: queryValue,
-          lang: "pt_br",
+          lang: "en",
           appid: process.env.REACT_APP_API_KEY,
           units: "metric",
         },
@@ -80,7 +81,7 @@ export const DataProvider = ({ children }) => {
       const forecastReponse = await api.get("onecall", {
         params: {
           ...coord,
-          lang: "pt_br",
+          lang: "en",
           appid: process.env.REACT_APP_API_KEY,
           units: "metric",
           exclude: "hourly,minutely",
@@ -99,13 +100,15 @@ export const DataProvider = ({ children }) => {
       setLoading(false);
     }
   };
-  const fetchQuery = (query) => {
-    getForecastByPlace(query);
-  };
+  useEffect(() => {
+    const currentPlaceLocal = localStorage.getItem("currentPlace");
+    if (currentPlaceLocal)
+      getForecastByPlace(JSON.parse(currentPlaceLocal).name);
+  }, []);
 
   return (
     <DataContext.Provider
-      value={{ loading, error, data, fetchQuery, state, sucess }}
+      value={{ loading, error, data, getForecastByPlace, state, sucess }}
     >
       {children}
     </DataContext.Provider>

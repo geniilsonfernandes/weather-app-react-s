@@ -12,7 +12,7 @@ import { Weather } from "../../components/Weather";
 import { Heading } from "../../components/Heading";
 import { WeatherCard } from "../../components/WeatherCard";
 import { useDataContext } from "../../context/dataContext";
-
+import loadingImage from "../../image/loading.gif";
 import * as S from "./styles";
 
 const mockWeather = {
@@ -58,7 +58,11 @@ export const Home = () => {
   const { loading, data, error, state } = useDataContext();
 
   if (!data.name) {
-    return <span>no have data</span>;
+    return (
+      <S.Loading>
+        <img src={loadingImage} alt="loading" />
+      </S.Loading>
+    );
   } else {
     return (
       <S.Container>
@@ -71,6 +75,7 @@ export const Home = () => {
             condition={data.current.weather[0].main}
             description={data.current.weather[0].description}
             date={data.current.dt}
+            iconCode={data.current.weather[0].id}
           />
         </S.WeatherWrapper>
         <S.BoxWrapper margin="16">

@@ -54,3 +54,14 @@ export const SectionGrid = styled(SectionWrapper)`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+export const Loading = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;

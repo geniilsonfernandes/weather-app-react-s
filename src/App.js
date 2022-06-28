@@ -4,11 +4,9 @@ import GlobalStyle from "./styles/globalStyles";
 import { Home } from "./pages/Home";
 import { Base } from "./pages/Base";
 import { DataProvider } from "./context/dataContext";
-import { UnitProvider } from "./context/units";
 
 function App() {
   return (
-    <UnitProvider>
       <DataProvider>
         <ThemeProvider theme={theme}>
           <Base>
@@ -17,7 +15,6 @@ function App() {
           <GlobalStyle />
         </ThemeProvider>
       </DataProvider>
-    </UnitProvider>
   );
 }
 

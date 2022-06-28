@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import P from "prop-types";
 import { SearchInput } from "../../components/SearchInput";
 import * as S from "./styles";
@@ -7,10 +7,14 @@ import { Container } from "../../components/Layout";
 import { useDataContext } from "../../context/dataContext";
 
 export const Base = ({ children }) => {
-  const { getForecastByPlace, loading, error, sucess } = useDataContext();
+  const { getForecastByPlace, loading, error, sucess, data } = useDataContext();
   const handleSubmit = (query) => {
     getForecastByPlace(query);
   };
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <S.Main>
