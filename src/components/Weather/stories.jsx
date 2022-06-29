@@ -14,8 +14,11 @@ export default {
   title: "Weather",
   conponent: Weather,
   argTypes: {
-    icon: { control: "select", options: cases },
     date: { control: "date" },
+    iconCode: {
+      control: "inline-radio",
+      options: [200, 302, 500, 600, 701, 800],
+    },
   },
 };
 
