@@ -17,7 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
+    "test:c": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
@@ -74,6 +75,7 @@
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.0",
+    "msw": "^0.42.3",
     "prop-types": "^15.8.1",
     "webpack": "^5.73.0"
   }
