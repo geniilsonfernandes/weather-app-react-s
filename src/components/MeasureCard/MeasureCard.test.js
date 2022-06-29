@@ -22,7 +22,9 @@ describe("<MeasureCard />", () => {
     expect(screen.getByText(mock.mesure + mock.unit)).toBeInTheDocument();
   });
   it("should not render icon ", () => {
-    renderWithTheme(<MeasureCard title={mock.title} mesure={mock.mesure} />);
+    renderWithTheme(
+      <MeasureCard title={mock.title} mesure={mock.mesure} unit={mock.unit} />
+    );
 
     expect(screen.queryByTestId("icon")).not.toBeInTheDocument();
     expect(screen.getByText(mock.title)).toBeInTheDocument();
