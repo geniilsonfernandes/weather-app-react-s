@@ -2,6 +2,15 @@ import { screen } from "@testing-library/react";
 import { Weather } from ".";
 import renderWithTheme from "../../utils/test/renderWithTheme";
 
+const fullDate = "Mon, 27 Jun 2022";
+jest.mock("../../utils/convertTimeStamp", () => {
+  return {
+    convertTimeStamp: () => {
+      return { fullDate };
+    },
+  };
+});
+
 jest.mock("../WeatherIcon", () => {
   return {
     __esModule: true,
