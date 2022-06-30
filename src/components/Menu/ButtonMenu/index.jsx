@@ -4,22 +4,19 @@ import P from "prop-types";
 
 export const ButtonMenu = ({ title, onClick, toolTipOnClick }) => {
   const handleClick = () => {
-    !!onClick && onClick();
+    !!onClick && onClick(title);
   };
 
   const handleToolTipClick = () => {
-    !!toolTipOnClick && toolTipOnClick();
+    !!toolTipOnClick && toolTipOnClick(title);
   };
 
   return (
-    <S.Wrapper
-      onClick={() => handleClick()}
-      role="button"
-      aria-label="place recente"
-    >
-      <S.ButtonLabel>{title}</S.ButtonLabel>
-
-      <S.ButtonRemove onClick={() => handleToolTipClick()}>
+    <S.Wrapper role="button" aria-label="place recente">
+      <S.ButtonLabel onClick={() => handleClick(title)}>{title}</S.ButtonLabel>
+      <S.ButtonRemove
+        onClick={() => handleToolTipClick()}
+      >
         Remove
       </S.ButtonRemove>
     </S.Wrapper>
