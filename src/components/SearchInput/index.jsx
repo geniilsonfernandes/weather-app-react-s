@@ -6,6 +6,7 @@ import * as S from "./styles.js";
 
 export const SearchInput = ({ onSubmit, error, loading, sucess }) => {
   const [value, setValue] = useState("");
+  const [prevValue, setPrevValue] = useState("");
 
   const handleChangeValue = (target) => {
     setValue(target.value);
@@ -13,17 +14,14 @@ export const SearchInput = ({ onSubmit, error, loading, sucess }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     !!value && onSubmit(value);
+    setPrevValue(value);
   };
   useEffect(() => {
-    sucess ? setValue("") : setValue((prev) => prev);
+    sucess ? setValue("") : setValue(prevValue);
   }, [sucess]);
 
   return (
-    <S.Wrapper
-      onSubmit={handleSubmit}
-      error={error}
-      isloading={loading}
-    >
+    <S.Wrapper onSubmit={handleSubmit} error={error} isloading={loading}>
       <S.WrapperIcon htmlFor="search">
         <FiSearch aria-label="search icon button" size={18} />
       </S.WrapperIcon>
