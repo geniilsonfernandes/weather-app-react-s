@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# weather-app | Api de jogos [Rawg](https://openweathermap.org/api)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Preview-Screens](ui_01.png)
 
-## Available Scripts
+## Sobre o Projeto
 
-In the project directory, you can run:
+Esse é um aplicativo meteorológico simples que realiza busca e retorna os dados da api.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Objetivo?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Prática conceitos do react e com TDD e melhorar meu código, além de aprender a utilizar ferramentas como storybook para poder visualizar os componentes de melhor forma.
 
-### `npm test`
+## Libs Usadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- MSW
+- styled components
 
-### `npm run build`
+## Storybook
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    :heavy_check_mark: Storybook [Storybook](https://openweathermap.org/api)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Testes Unitários
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    :heavy_check_mark: coverage [coverage](https://openweathermap.org/api)
 
-### `npm run eject`
+## Funcionalidades
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Home
+  :heavy_check_mark: Temperatura atual da cidade
+  :heavy_check_mark: curta descrição do tempo atual
+  :heavy_check_mark: Temperatura dos 5 dias anteriores
+  :heavy_check_mark: medições em tela de pressão, força do vento, umidade e sensação térmica
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Search
+  :heavy_check_mark: Pesquisar por nome da cidade
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Localstorage
+  :heavy_check_mark: Persiste a última pesquisa
+  :heavy_check_mark: Guarda o histórico de pesquisa
+  :heavy_check_mark: Remove do histórico buscas feitas
