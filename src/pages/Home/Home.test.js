@@ -88,6 +88,7 @@ describe("<Home />", () => {
       </DataContext.Provider>
     );
     expect(screen.getByAltText("loading")).toBeInTheDocument();
+    expect(screen.getByText("Wait or search for a city")).toBeInTheDocument();
   });
 
   it("should render Home correctly", () => {
