@@ -1,7 +1,17 @@
 import { screen } from "@testing-library/react";
 import { WeatherCard } from ".";
 import renderWithTheme from "../../utils/test/renderWithTheme";
+
 //1656384911, // Mon, 27 Jun 2022
+const weekday = "Mon";
+jest.mock("../../utils/convertTimeStamp", () => {
+  return {
+    convertTimeStamp: () => {
+      return { weekday };
+    },
+  };
+});
+
 describe("<WeatherCard />", () => {
   it("should render the component correctly", () => {
     renderWithTheme(
