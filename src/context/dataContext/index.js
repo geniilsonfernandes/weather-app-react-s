@@ -4,7 +4,6 @@ import P from "prop-types";
 
 export const DataContext = createContext();
 
-
 export const DataProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,9 +19,9 @@ export const DataProvider = ({ children }) => {
       const { coord, name } = data;
       localStorage.setItem("currentPlace", JSON.stringify({ coord, name }));
       setCurrentPlace({ coord, name });
+      setSucess(true);
       setData({ ...data });
       setError(false);
-      setSucess(true);
       setLoading(false);
     } catch (error) {
       setError(error.message);
@@ -49,7 +48,6 @@ export const DataProvider = ({ children }) => {
         getForecastByPlace,
         currentPlace,
         sucess,
-        test,
       }}
     >
       {children}
