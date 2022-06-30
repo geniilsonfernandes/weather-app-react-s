@@ -27,7 +27,7 @@ export const Home = () => {
     return (
       <S.Container>
         <S.SectionMenu>
-          <Menu currentPlace={currentPlace.name} />
+          <Menu currentPlace={currentPlace} />
         </S.SectionMenu>
         <S.WeatherWrapper>
           <Weather
@@ -67,14 +67,17 @@ export const Home = () => {
         <S.SectionWrapper>
           <Heading title="Week | last 5 days" />
           <S.SectionGrid>
-            {data.daily.slice(0, 5).map((temp) => (
-              <WeatherCard
-                key={temp.dt}
-                temp={temp.temp.day.toFixed()}
-                iconCode={temp.weather[0].id}
-                date={temp.dt}
-              />
-            ))}
+            {data.daily
+              .slice(2, 7)
+              .reverse()
+              .map((temp) => (
+                <WeatherCard
+                  key={temp.dt}
+                  temp={temp.temp.day.toFixed()}
+                  iconCode={temp.weather[0].id}
+                  date={temp.dt}
+                />
+              ))}
           </S.SectionGrid>
         </S.SectionWrapper>
       </S.Container>

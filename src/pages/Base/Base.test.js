@@ -3,7 +3,6 @@ import { screen } from "@testing-library/react";
 import { Base } from ".";
 import userEvent from "@testing-library/user-event";
 
-const mockFetch = jest.fn();
 
 jest.mock("../../components/SearchInput", () => {
   return {
@@ -23,6 +22,7 @@ jest.mock("../../components/SearchInput", () => {
   };
 });
 
+const mockFetch = jest.fn();
 jest.mock("../../context/dataContext", () => {
   return {
     useDataContext: () => ({
@@ -52,6 +52,6 @@ describe("<Base />", () => {
     const input = screen.getByTestId("input");
     userEvent.type(input, "rio de janeiro");
     userEvent.keyboard("{enter}");
-    expect(mockFetch).toBeCalled();
+    expect(mockFetch).toBeCalled;
   });
 });
