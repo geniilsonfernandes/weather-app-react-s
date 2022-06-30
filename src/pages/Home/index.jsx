@@ -17,6 +17,8 @@ import * as S from "./styles";
 export const Home = () => {
   const { data, currentPlace } = useDataContext();
 
+  const daily = (data && data.daily?.slice(2, 7).reverse()) || [];
+
   if (!data.name) {
     return (
       <S.Loading>
@@ -68,17 +70,14 @@ export const Home = () => {
         <S.SectionWrapper>
           <Heading title="Week | last 5 days" />
           <S.SectionGrid>
-            {data.daily
-              .slice(2, 7)
-              .reverse()
-              .map((temp) => (
-                <WeatherCard
-                  key={temp.dt}
-                  temp={temp.temp.day.toFixed()}
-                  iconCode={temp.weather[0].id}
-                  date={temp.dt}
-                />
-              ))}
+            {daily.map((temp) => (
+              <WeatherCard
+                key={temp.dt}
+                temp={temp.temp.day.toFixed()}
+                iconCode={temp.weather[0].id}
+                date={temp.dt}
+              />
+            ))}
           </S.SectionGrid>
         </S.SectionWrapper>
       </S.Container>

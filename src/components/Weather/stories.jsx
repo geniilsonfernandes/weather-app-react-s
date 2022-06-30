@@ -1,17 +1,7 @@
 import { Weather } from ".";
-const cases = [
-  "ClearSky",
-  "BrokenClouds",
-  "FewClouds",
-  "Mist",
-  "Rain",
-  "ScatteredClouds",
-  "Snow",
-  "Thunderstorm",
-];
 
 export default {
-  title: "Weather",
+  title: "Weather/Weather",
   conponent: Weather,
   argTypes: {
     date: { control: "date" },

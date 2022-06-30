@@ -2,7 +2,7 @@ import { MeasureCard } from ".";
 import { WiStrongWind } from "react-icons/wi";
 
 export default {
-  title: "MeasureCard",
+  title: "Weather/MeasureCard",
   component: MeasureCard,
 };
 

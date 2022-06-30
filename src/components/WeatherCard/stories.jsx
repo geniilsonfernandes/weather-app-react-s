@@ -1,7 +1,7 @@
 import { WeatherCard } from ".";
 
 export default {
-  title: "WeatherCard",
+  title: "Weather/WeatherCard",
   component: WeatherCard,
   argTypes: {
     date: { control: "date" },
