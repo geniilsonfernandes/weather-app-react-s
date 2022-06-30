@@ -1,4 +1,4 @@
-# weather-app | Api de jogos [Rawg](https://openweathermap.org/api)
+# Weather-app | Api de dados meteorológico [openweathermap](https://openweathermap.org/api)
 
 ![Preview-Screens](ui_01.png)
 
@@ -6,6 +6,7 @@
 
 Esse é um aplicativo meteorológico simples que realiza busca e retorna os dados da api.
 
+LINK PARA O SITE : [weather-react-app-beta.vercel.app](https://weather-react-app-beta.vercel.app/)
 
 ## Objetivo?
 
@@ -27,12 +28,14 @@ Prática conceitos do react e com TDD e melhorar meu código, além de aprender 
 ## Funcionalidades
 
 - Home
+
   - :heavy_check_mark: Temperatura atual da cidade
   - :heavy_check_mark: curta descrição do tempo atual
   - :heavy_check_mark: Temperatura dos 5 dias anteriores
   - :heavy_check_mark: medições em tela de pressão, força do vento, umidade e sensação térmica
 
 - Search
+
   - :heavy_check_mark: Pesquisar por nome da cidade
 
 - Localstorage
