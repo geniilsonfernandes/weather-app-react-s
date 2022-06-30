@@ -16,11 +16,12 @@ import * as S from "./styles";
 
 export const Home = () => {
   const { data, currentPlace } = useDataContext();
+
   if (!data.name) {
     return (
       <S.Loading>
-        {currentPlace && <p>pesquise uma cidade</p>}
         <img src={loadingImage} alt="loading" />
+        {!!currentPlace && <S.Alert>Wait or search for a city</S.Alert>}
       </S.Loading>
     );
   } else {
@@ -67,17 +68,14 @@ export const Home = () => {
         <S.SectionWrapper>
           <Heading title="Week | last 5 days" />
           <S.SectionGrid>
-            {data.daily
-              .slice(2, 7)
-              .reverse()
-              .map((temp) => (
-                <WeatherCard
-                  key={temp.dt}
-                  temp={temp.temp.day.toFixed()}
-                  iconCode={temp.weather[0].id}
-                  date={temp.dt}
-                />
-              ))}
+            {data.daily.reverse().map((temp) => (
+              <WeatherCard
+                key={temp.dt}
+                temp={temp.temp.day.toFixed()}
+                iconCode={temp.weather[0].id}
+                date={temp.dt}
+              />
+            ))}
           </S.SectionGrid>
         </S.SectionWrapper>
       </S.Container>

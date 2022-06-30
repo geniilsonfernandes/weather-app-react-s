@@ -57,11 +57,26 @@ export const SectionGrid = styled(SectionWrapper)`
 
 export const Loading = styled.span`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 400px;
+  gap: 32px;
   img {
     width: 100px;
     height: 100px;
   }
+`;
+
+export const Alert = styled.span`
+  ${({ theme }) => css`
+    background: ${theme.colors.black[200]};
+    border-radius: ${theme.radius};
+    padding: 16px;
+    display: grid;
+
+    color: ${theme.colors.white[100]};
+    font-size: ${theme.fontSizes.xsmall};
+    line-height: ${theme.fontSizes.large};
+  `}
 `;
