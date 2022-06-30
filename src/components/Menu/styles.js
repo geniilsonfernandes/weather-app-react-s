@@ -57,7 +57,7 @@ export const Modal = styled.div`
   left: 50%;
   transform: translateX(-50%) translateY(-30px);
   transform-origin: center center;
-  width: 300px;
+  width: 400px;
   opacity: 0;
   pointer-events: none;
   transition: all ease-in-out 100ms;
@@ -86,4 +86,31 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+`;
+
+export const Span = styled.span`
+  width: 100%;
+  height: 32px;
+  padding: 4px 8px;
+  text-align: left;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  transition: background ease-in-out 300ms;
+  ${({ theme }) => css`
+    color: ${theme.colors.white[100]};
+    font-size: ${theme.fontSizes.xsmall};
+    line-height: ${theme.fontSizes.large};
+    background: ${theme.colors.black[300]};
+    &:hover {
+      background: ${theme.colors.black[400]};
+    }
+    &:hover + button {
+      opacity: 1;
+    }
+    &:focus + button {
+      opacity: 1;
+    }
+  `}
+  cursor: pointer;
 `;
