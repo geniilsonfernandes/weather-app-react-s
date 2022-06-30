@@ -8,6 +8,7 @@ import { useDataContext } from "../../context/dataContext";
 
 export const Base = ({ children }) => {
   const { getForecastByPlace, loading, error, sucess, data } = useDataContext();
+  
   const handleSubmit = (query) => {
     getForecastByPlace(query);
   };

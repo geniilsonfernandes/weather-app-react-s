@@ -15,14 +15,11 @@ import loadingImage from "../../image/loading.gif";
 import * as S from "./styles";
 
 export const Home = () => {
-  const {
-    data,
-    state: { currentPlace },
-  } = useDataContext();
-
+  const { data, currentPlace } = useDataContext();
   if (!data.name) {
     return (
       <S.Loading>
+        {currentPlace && <p>pesquise uma cidade</p>}
         <img src={loadingImage} alt="loading" />
       </S.Loading>
     );
