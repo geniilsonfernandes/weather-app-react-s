@@ -27,15 +27,15 @@ Prática conceitos do react e com TDD e melhorar meu código, além de aprender 
 ## Funcionalidades
 
 - Home
-  :heavy_check_mark: Temperatura atual da cidade
-  :heavy_check_mark: curta descrição do tempo atual
-  :heavy_check_mark: Temperatura dos 5 dias anteriores
-  :heavy_check_mark: medições em tela de pressão, força do vento, umidade e sensação térmica
+  - :heavy_check_mark: Temperatura atual da cidade
+  - :heavy_check_mark: curta descrição do tempo atual
+  - :heavy_check_mark: Temperatura dos 5 dias anteriores
+  - :heavy_check_mark: medições em tela de pressão, força do vento, umidade e sensação térmica
 
 - Search
-  :heavy_check_mark: Pesquisar por nome da cidade
+  - :heavy_check_mark: Pesquisar por nome da cidade
 
 - Localstorage
-  :heavy_check_mark: Persiste a última pesquisa
-  :heavy_check_mark: Guarda o histórico de pesquisa
-  :heavy_check_mark: Remove do histórico buscas feitas
+  - :heavy_check_mark: Persiste a última pesquisa
+  - :heavy_check_mark: Guarda o histórico de pesquisa
+  - :heavy_check_mark: Remove do histórico buscas feitas
