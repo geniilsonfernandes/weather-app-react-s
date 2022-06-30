@@ -19,11 +19,15 @@ Prática conceitos do react e com TDD e melhorar meu código, além de aprender 
 
 ## Storybook
 
-    :heavy_check_mark: Storybook [Storybook](https://weather-react-app-stories.vercel.app/)
+    - Usei o storybook para construir a interface
+
+link para o Storybook : :heavy_check_mark: [Storybook](https://weather-react-app-stories.vercel.app/)
 
 ## Testes Unitários
 
-    :heavy_check_mark: coverage [coverage](https://weather-react-app-coverage.vercel.app/)
+    - Realizado os teste dos componentes e contexto da aplicaçao, localstorage...
+
+link para o para o Coverage : :heavy_check_mark: [coverage](https://weather-react-app-coverage.vercel.app/)
 
 ## Funcionalidades
 
