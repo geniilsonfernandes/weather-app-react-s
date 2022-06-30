@@ -19,11 +19,11 @@ Prática conceitos do react e com TDD e melhorar meu código, além de aprender 
 
 ## Storybook
 
-    :heavy_check_mark: Storybook [Storybook](https://openweathermap.org/api)
+    :heavy_check_mark: Storybook [Storybook](https://weather-react-app-stories.vercel.app/)
 
 ## Testes Unitários
 
-    :heavy_check_mark: coverage [coverage](https://openweathermap.org/api)
+    :heavy_check_mark: coverage [coverage](https://weather-react-app-coverage.vercel.app/)
 
 ## Funcionalidades
 
