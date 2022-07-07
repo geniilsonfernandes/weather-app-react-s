@@ -10,7 +10,7 @@ LINK PARA O SITE : [weather-react-app-beta.vercel.app](https://weather-react-app
 
 ## Objetivo?
 
-Prática conceitos do react e com TDD e melhorar meu código, além de aprender a utilizar ferramentas como storybook para poder visualizar os componentes de melhor forma.
+Prática conceitos do react e com TDD e melhorar meu código, além de aprender a utilizar ferramentas como storybook para poder visualizar os componentes e documentar .
 
 ## Libs Usadas
 
@@ -36,7 +36,7 @@ link para o para o Coverage : :heavy_check_mark: [coverage](https://weather-reac
   - :heavy_check_mark: Temperatura atual da cidade
   - :heavy_check_mark: curta descrição do tempo atual
   - :heavy_check_mark: Temperatura dos 5 dias anteriores
-  - :heavy_check_mark: medições em tela de pressão, força do vento, umidade e sensação térmica
+  - :heavy_check_mark: medições de pressão, velocidade do vento, umidade e sensação térmica
 
 - Search
 
