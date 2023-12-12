@@ -6,7 +6,7 @@
 
 Esse é um aplicativo meteorológico simples que realiza busca e retorna os dados da api.
 
-LINK PARA O SITE : [weather-react-app-beta.vercel.app](https://weather-react-app-beta.vercel.app/)
+LINK PARA O SITE : [https://weather-react-app-beta.vercel.app/](https://weather-app-react-s.vercel.app/)
 
 ## Objetivo?
 
